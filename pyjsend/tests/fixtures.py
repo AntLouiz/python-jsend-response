@@ -1,7 +1,7 @@
 import json
 import pytest
 import mock
-from pyjsend.base import ResponsesTable
+from pyjsend.base import ResponsesTable, Response
 
 
 table_responses = {
@@ -36,3 +36,10 @@ def response_table_object(mocked_file):
     response_table = ResponsesTable('somefilepath')
 
     return response_table
+
+
+@pytest.fixture
+def response_object(mocked_file):
+    response = Response('InvalidValueType')
+
+    return response
