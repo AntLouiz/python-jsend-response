@@ -15,7 +15,6 @@ def test_json_schema_invalid_input():
     response = Response('BadRequest')
 
     assert response.http_code == 400
-    assert response.message == 'The value specified is invalid.'
 
 
 def test_json_schema_success_code():
@@ -38,5 +37,3 @@ def test_json_schema_missing_response_code():
 
     with pytest.raises(MissingResponseCode) as e:
         response = Response('SomemissingResponseCode')
-
-    assert str(e.value) == 'Missing response code in table of responses.'

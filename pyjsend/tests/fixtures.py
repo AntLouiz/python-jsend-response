@@ -29,6 +29,6 @@ def response_table_object():
 
 @pytest.fixture
 def response_object():
-    response = Response('InvalidValueType')
+    response = Response('BadRequest')
 
     return response
