@@ -3,6 +3,7 @@ import pytest
 import json
 from pyjsend.base import Response, ResponsesTable
 from pyjsend.tests.fixtures import response_object, response_table_object, encoded_table_responses
+from pyjsend.exceptions import MissingResponseCode
 
 
 def test_json_schema_table_of_responses_composition(response_object, response_table_object):

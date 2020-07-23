@@ -2,6 +2,7 @@ import json
 import re
 import http
 from pyjsend.settings import RESPONSES_TABLE_FILE_PATH
+from pyjsend.exceptions import MissingResponseCode
 
 
 class ResponsesTable:
@@ -67,7 +68,11 @@ class Response:
     _responses_table = ResponsesTable(RESPONSES_TABLE_FILE_PATH)
 
     def __init__(self, code, *args, **kwargs):
-        self.code = self._responses_table.codes[code]
+        try:
+            self.code = self._responses_table.codes[code]
+        except KeyError:
+            raise MissingResponseCode('Missing response code in table of responses.')
+
         self.http_code = self.code['http_code']
         self.status = self.code['status']
         self.message = self.code.get('message')

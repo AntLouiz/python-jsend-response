@@ -39,7 +39,7 @@ def response_table_object(mocked_file):
 
 
 @pytest.fixture
-def response_object(mocked_file):
+def response_object():
     response = Response('InvalidValueType')
 
     return response
