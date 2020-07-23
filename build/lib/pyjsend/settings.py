@@ -1,4 +1,11 @@
 import os.path
+import os
 
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-RESPONSES_TABLE_FILE_PATH = os.path.join(BASE_DIR, "data", "responses_table.json")
+_ROOT = os.path.abspath(os.path.dirname(__file__))
+
+
+def get_data(path):
+    return os.path.join(_ROOT, 'data', path)
+
+
+RESPONSES_TABLE_FILE_PATH = get_data('responses_table.json')

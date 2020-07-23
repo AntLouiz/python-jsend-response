@@ -19,5 +19,6 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     python_requires='>=3.5',
-    include_package_data=True
+    include_package_data=True,
+    data_files=[('', ['pyjsend/data/responses_table.json'])],
 )

@@ -5,11 +5,11 @@ PyJSend.egg-info/PKG-INFO
 PyJSend.egg-info/SOURCES.txt
 PyJSend.egg-info/dependency_links.txt
 PyJSend.egg-info/top_level.txt
-data/responses_table.json
 pyjsend/__init__.py
 pyjsend/base.py
 pyjsend/exceptions.py
 pyjsend/settings.py
+pyjsend/data/responses_table.json
 pyjsend/tests/__init__.py
 pyjsend/tests/fixtures.py
 pyjsend/tests/test_json_schema.py

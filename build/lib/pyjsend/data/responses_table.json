@@ -1,0 +1,22 @@
+{
+  "InvalidValueType": {
+    "http_code": 400,
+    "status": "failure",
+    "message": "The value specified is invalid."
+  },
+  "SuccessfullLogin": {
+    "http_code": 200,
+    "status": "success",
+    "data": {}
+  },
+  "EntityAlreadyExists": {
+    "http_code": 409,
+    "status": "failure",
+    "message": "The specified entity already exists."
+  },
+  "NotImplemented": {
+    "http_code": 501,
+    "status": "error",
+    "message": "The requested operation is not implemented on the specified resource."
+  }
+}
