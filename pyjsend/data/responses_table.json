@@ -4,11 +4,6 @@
     "status": "success",
     "data": {}
   },
-  "SuccessfullLogin": {
-    "http_code": 200,
-    "status": "success",
-    "data": {}
-  },
   "WrongData": {
     "http_code": 400,
     "status": "failure",
