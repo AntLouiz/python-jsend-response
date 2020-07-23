@@ -67,9 +67,12 @@ class ResponsesTable:
 class Response:
     _responses_table = ResponsesTable(RESPONSES_TABLE_FILE_PATH)
 
-    def __init__(self, code, *args, **kwargs):
+    def __init__(self, type, *args, **kwargs):
+
+        self.type = type
+
         try:
-            self.code = self._responses_table.codes[code]
+            self.code = self._responses_table.codes[type]
         except KeyError:
             raise MissingResponseCode('Missing response code in table of responses.')
 
@@ -84,6 +87,7 @@ class Response:
             self.code['data'] = self.data
 
         self.code['code'] = self.code.pop('http_code')
+        self.code['type'] = self.type
 
         return json.dumps(self.code)
 
