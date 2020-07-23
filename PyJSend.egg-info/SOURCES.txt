@@ -1,11 +1,11 @@
 MANIFEST.in
 README.md
-responses_table.json
 setup.py
 PyJSend.egg-info/PKG-INFO
 PyJSend.egg-info/SOURCES.txt
 PyJSend.egg-info/dependency_links.txt
 PyJSend.egg-info/top_level.txt
+data/responses_table.json
 pyjsend/__init__.py
 pyjsend/base.py
 pyjsend/exceptions.py
