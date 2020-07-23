@@ -62,6 +62,7 @@ def test_validate_response_table():
 
 
 def test_responses_table_instance_file_path(response_table_object):
+    response_table_file_path = 'somefilepath'
     assert response_table_object.file == response_table_file_path
 
 
