@@ -1,6 +1,7 @@
 import json
 import re
 import http
+from pyjsend.settings import RESPONSES_TABLE_FILE_PATH
 
 
 class ResponsesTable:
@@ -60,6 +61,30 @@ class ResponsesTable:
                 valid = False
 
             return valid
+
+
+class Response:
+    _responses_table = ResponsesTable(RESPONSES_TABLE_FILE_PATH)
+
+    def __init__(self, code, *args, **kwargs):
+        self.code = self._responses_table.codes[code]
+        self.http_code = self.code['http_code']
+        self.status = self.code['status']
+        self.message = self.code.get('message')
+        self.data = kwargs.get('data')
+
+    def to_json(self):
+        json_data = {}
+        if self.status == 'success':
+            json_data['data'] = self.data
+        else:
+            json_data['message'] = self.message
+
+        json_data['code'] = self.code
+        json_data['status'] = self.status
+
+        return json.dumps(json_data)
+
 
 
 def main():
