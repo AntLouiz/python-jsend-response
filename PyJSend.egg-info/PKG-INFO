@@ -82,7 +82,7 @@ Description: # PyJSend
         'The value specified is invalid.'
         
         >>> response.to_json()
-        '{"http_code": 400, "status": "failure", "message": "The value specified is invalid."}'
+        '{"code": 400, "status": "failure", "message": "The value specified is invalid."}'
         ```
 Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3

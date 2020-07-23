@@ -83,6 +83,8 @@ class Response:
         if self.data:
             self.code['data'] = self.data
 
+        self.code['code'] = self.code['http_code']
+
         return json.dumps(self.code)
 
 
