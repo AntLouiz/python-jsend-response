@@ -1,20 +1,65 @@
 {
-  "InvalidValueType": {
-    "http_code": 400,
-    "status": "failure",
-    "message": "The value specified is invalid."
-  },
-  "SuccessfullLogin": {
+  "SuccessfullRequest": {
     "http_code": 200,
     "status": "success",
     "data": {}
+  },
+  "WrongData": {
+    "http_code": 400,
+    "status": "failure",
+    "message": "The data specified is invalid."
+  },
+  "ValidationError": {
+    "http_code": 400,
+    "status": "failure",
+    "message": "The fields specified are invalid."
+  },
+  "AccountAlreadyExists": {
+    "http_code": 400,
+    "status": "failure",
+    "message": "User account already exists."
+  },
+  "AccountDoesntMatch": {
+    "http_code": 400,
+    "status": "failure",
+    "message": "Account doesn't match"
+  },
+  "BadRequest": {
+    "http_code": 400,
+    "status": "failure",
+    "message": "Bad request"
+  },
+  "AlreadyRevokedToken": {
+    "http_code": 400,
+    "status": "failure",
+    "message": "Token is already revoked"
+  },
+  "UnauthorizedRequest": {
+    "http_code": 401,
+    "status": "failure",
+    "message": "Unauthorized"
+  },
+  "ForbidenRequest": {
+    "http_code": 403,
+    "status": "failure",
+    "message": "Forbidden"
+  },
+  "NotAllowed": {
+    "http_code": 403,
+    "status": "failure",
+    "message": "Not allowed to access this route."
+  },
+  "UserAccountDoesntExist": {
+    "http_code": 404,
+    "status": "failure",
+    "message": "User account doesn't exist"
   },
   "EntityAlreadyExists": {
     "http_code": 409,
     "status": "failure",
     "message": "The specified entity already exists."
   },
-  "NotImplemented": {
+  "NotImplementedError": {
     "http_code": 501,
     "status": "error",
     "message": "The requested operation is not implemented on the specified resource."
