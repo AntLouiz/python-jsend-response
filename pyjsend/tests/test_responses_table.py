@@ -3,7 +3,6 @@ import mock
 import re
 import http
 from .fixtures import table_responses, encoded_table_responses, response_table_object
-from pyjsend.base import ResponsesTable
 
 
 @mock.patch("builtins.open", new_callable=mock.mock_open, read_data=encoded_table_responses)
