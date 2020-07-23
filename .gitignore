@@ -2,7 +2,6 @@
 *.pyc
 *.gz
 .env
-*.json
 *.log
 *.pem
 *.pub
