@@ -3,20 +3,11 @@ import mock
 import re
 import http
 from .fixtures import table_responses, encoded_table_responses, response_table_object
+from pyjsend.settings import RESPONSES_TABLE_FILE_PATH
 
 
-@mock.patch("builtins.open", new_callable=mock.mock_open, read_data=encoded_table_responses)
-def test_load_responses_table(mocked_file):
-    file_path = 'some_table_response_file_path'
 
-    with open(file_path, 'r') as file:
-        response_table = file.read()
-        response_table = json.loads(response_table)
-
-    assert response_table == table_responses
-
-
-def test_validate_response_table():
+def test_validate_response_table(table_responses):
     data = table_responses
     keys = table_responses.keys()
     camel_case_regex = r'^[A-Z]+[a-z]+[A-Z]+\w+$'
@@ -61,9 +52,8 @@ def test_validate_response_table():
 
 
 def test_responses_table_instance_file_path(response_table_object):
-    response_table_file_path = 'somefilepath'
-    assert response_table_object.file == response_table_file_path
+    assert response_table_object.file == RESPONSES_TABLE_FILE_PATH
 
 
-def test_response_table_availabe_codes(response_table_object):
+def test_response_table_availabe_codes(response_table_object, table_responses):
     assert response_table_object.codes == table_responses
