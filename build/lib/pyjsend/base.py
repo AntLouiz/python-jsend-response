@@ -79,16 +79,11 @@ class Response:
         self.data = kwargs.get('data')
 
     def to_json(self):
-        json_data = {}
-        if self.status == 'success':
-            json_data['data'] = self.data
-        else:
-            json_data['message'] = self.message
 
-        json_data['code'] = self.code
-        json_data['status'] = self.status
+        if self.data:
+            self.code['data'] = self.data
 
-        return json.dumps(json_data)
+        return json.dumps(self.code)
 
 
 
