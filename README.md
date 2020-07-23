@@ -74,5 +74,5 @@ Import the **Response** class and select one of the response inserted in the res
 'The value specified is invalid.'
 
 >>> response.to_json()
-'{"code": 400, "status": "failure", "message": "The value specified is invalid."}'
+'{"status": "failure", "message": "The value specified is invalid.", "code": 400, "type": "InvalidValueType"}'
 ```
