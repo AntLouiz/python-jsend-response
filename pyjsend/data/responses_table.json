@@ -1,6 +1,11 @@
 {
-  "SuccessfullRequest": {
+  "SuccessfulRequest": {
     "http_code": 200,
+    "status": "success",
+    "data": {}
+  },
+  "CreatedSucessfully": {
+    "http_code": 201,
     "status": "success",
     "data": {}
   },
