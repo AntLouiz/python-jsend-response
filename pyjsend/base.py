@@ -18,8 +18,8 @@ class ResponsesTable:
 
             valid_codes = self.validate(response_table)
 
-            if valid_codes:
-                self.codes = response_table
+        if valid_codes:
+            self.codes = response_table
 
     def validate(self, codes):
         keys = codes.keys()
@@ -65,10 +65,8 @@ class ResponsesTable:
 
 
 class Response:
-    _responses_table = ResponsesTable(RESPONSES_TABLE_FILE_PATH)
-
     def __init__(self, type, *args, **kwargs):
-
+        self._responses_table = ResponsesTable(RESPONSES_TABLE_FILE_PATH)
         self.type = type
 
         try:
