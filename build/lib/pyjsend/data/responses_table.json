@@ -1,6 +1,11 @@
 {
-  "SuccessfullRequest": {
+  "SuccessfulRequest": {
     "http_code": 200,
+    "status": "success",
+    "data": {}
+  },
+  "CreatedSuccessfully": {
+    "http_code": 201,
     "status": "success",
     "data": {}
   },
@@ -39,7 +44,7 @@
     "status": "failure",
     "message": "Unauthorized"
   },
-  "ForbidenRequest": {
+  "ForbiddenRequest": {
     "http_code": 403,
     "status": "failure",
     "message": "Forbidden"

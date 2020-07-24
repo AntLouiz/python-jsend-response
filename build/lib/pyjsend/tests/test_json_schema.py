@@ -20,7 +20,7 @@ def test_json_schema_invalid_input():
 def test_json_schema_success_code():
     email = 'some@email.com'
 
-    response = Response('SuccessfullRequest', data={'email': email})
+    response = Response('SuccessfulRequest', data={'email': email})
 
     assert response.http_code == 200
 
@@ -28,7 +28,7 @@ def test_json_schema_success_code():
 def test_json_schema_to_json_method():
     email = 'some@email.com'
 
-    response = Response('SuccessfullRequest', data={'email': email})
+    response = Response('SuccessfulRequest', data={'email': email})
 
     assert response.to_json()
 
