@@ -82,15 +82,15 @@ class Response:
         self.data = kwargs.get('data')
 
     def to_json(self):
+        response = self.code.copy()
 
         if self.data:
-            self.code['data'] = self.data
+            response['data'] = self.data
 
-        self.code['code'] = self.code.pop('http_code')
-        self.code['type'] = self.type
+        response['code'] = response.pop('http_code')
+        response['type'] = self.type
 
-        return json.dumps(self.code)
-
+        return json.dumps(response)
 
 
 def main():
