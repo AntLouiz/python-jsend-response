@@ -39,7 +39,7 @@
     "status": "failure",
     "message": "Unauthorized"
   },
-  "ForbidenRequest": {
+  "ForbiddenRequest": {
     "http_code": 403,
     "status": "failure",
     "message": "Forbidden"
