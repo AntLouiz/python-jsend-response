@@ -4,14 +4,14 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="angulare-pyjsend",
+    name="pyjsend",
     version="0.0.1",
     author="AntLouiz",
-    author_email="author@example.com",
+    author_email="luizrodrigo46@hotmail.com",
     description="PyJSend is a simply implementation of JSend.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://gitlab.com/AntLouiz/pyjsend",
+    url="https://github.com/AntLouiz/pyjsend",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
