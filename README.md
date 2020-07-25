@@ -49,7 +49,7 @@ follow the requirements above to create an valid response.
 ### Using pip
 To try out via pip, run:
 ```
-$ pip install git+ssh://git@gitlab.com/AntLouiz/pyjsend.git
+$ pip install git+ssh://git@github.com/AntLouiz/pyjsend.git
 ```
 
 ## Usage
