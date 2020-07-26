@@ -1,1 +1,1 @@
-from pyjsend.base import Response
+from pyjsend.responses import *
