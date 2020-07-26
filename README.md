@@ -1,6 +1,6 @@
 # Description
 
-python-jsend-response is a simply implementation of [JSend](https://github.com/omniti-labs/jsend).
+python-jsend-response is a simple implementation of [JSend](https://github.com/omniti-labs/jsend).
 
 JSend is a specification that lays down some rules for how JSON responses from web servers should be formatted. JSend focuses on application-level (as opposed to protocol- or transport-level) messaging which makes it ideal for use in REST-style applications and APIs.:
 
