@@ -1,11 +1,7 @@
-import os.path
-import os
-
-_ROOT = os.path.abspath(os.path.dirname(__file__))
+from pathlib import Path
 
 
-def get_data(path):
-    return os.path.join(_ROOT, 'data', path)
+APP_DIR = Path(__file__).parent
+ROOT_DIR = APP_DIR.parent
 
-
-RESPONSES_TABLE_FILE_PATH = get_data('responses_table.json')
+RESPONSES_TABLE_FILE_PATH = Path(ROOT_DIR, 'responses_table.yml')

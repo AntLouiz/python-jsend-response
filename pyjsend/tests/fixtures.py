@@ -1,22 +1,26 @@
 import json
 import pytest
-import mock
+import yaml
 from pyjsend.base import ResponsesTable, Response
 from pyjsend.settings import RESPONSES_TABLE_FILE_PATH
 
 
 @pytest.fixture
 def table_responses():
-    with open(RESPONSES_TABLE_FILE_PATH) as file:
-        response = file.read()
-        response = json.loads(response)
-        return response
+    file = open(RESPONSES_TABLE_FILE_PATH, 'r')
+    response = yaml.load(file.read(), Loader=yaml.FullLoader)
+    file.close()
+
+    return response
+
 
 @pytest.fixture
 def encoded_table_responses():
-    with open(RESPONSES_TABLE_FILE_PATH) as file:
-        response = file.read()
-        return response
+    file = open(RESPONSES_TABLE_FILE_PATH, 'r')
+    response = yaml.load(file.read(), Loader=yaml.FullLoader)
+    file.close()
+
+    return json.dumps(response)
 
 
 @pytest.fixture

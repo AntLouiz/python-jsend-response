@@ -1,6 +1,7 @@
 import json
 import re
 import http
+import yaml
 from pyjsend.settings import RESPONSES_TABLE_FILE_PATH
 from pyjsend.exceptions import MissingResponseCode
 
@@ -12,11 +13,11 @@ class ResponsesTable:
         self._load_responses_table()
 
     def _load_responses_table(self):
-        with open(self.file, 'r') as file:
-            response_table = file.read()
-            response_table = json.loads(response_table)
+        file = open(RESPONSES_TABLE_FILE_PATH, 'r')
+        response_table = yaml.load(file.read(), Loader=yaml.FullLoader)
+        file.close()
 
-            valid_codes = self.validate(response_table)
+        valid_codes = self.validate(response_table)
 
         if valid_codes:
             self.codes = response_table
