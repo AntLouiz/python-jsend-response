@@ -66,8 +66,9 @@ class ResponsesTable:
 
 
 class Response:
+    _responses_table = ResponsesTable(RESPONSES_TABLE_FILE_PATH)
+
     def __init__(self, type, *args, **kwargs):
-        self._responses_table = ResponsesTable(RESPONSES_TABLE_FILE_PATH)
         self.type = type
 
         try:
