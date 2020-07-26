@@ -1,18 +1,10 @@
 
-import pytest
-import json
-from pyjsend.base import Response, ResponsesTable
-from pyjsend.tests.fixtures import response_object, response_table_object
-from pyjsend.exceptions import MissingResponseCode
-
-
-def test_json_schema_table_of_responses_composition(response_object):
-    assert isinstance(response_object._responses_table, ResponsesTable)
+from pyjsend.responses import SuccessResponse, BadResponse
 
 
 def test_json_schema_invalid_input():
 
-    response = Response('BadRequest')
+    response = BadResponse()
 
     assert response.http_code == 400
 
@@ -20,7 +12,7 @@ def test_json_schema_invalid_input():
 def test_json_schema_success_code():
     email = 'some@email.com'
 
-    response = Response('SuccessfulRequest', data={'email': email})
+    response = SuccessResponse(data={'email': email})
 
     assert response.http_code == 200
 
@@ -28,12 +20,6 @@ def test_json_schema_success_code():
 def test_json_schema_to_json_method():
     email = 'some@email.com'
 
-    response = Response('SuccessfulRequest', data={'email': email})
+    response = SuccessResponse({'email': email})
 
     assert response.to_json()
-
-
-def test_json_schema_missing_response_code():
-
-    with pytest.raises(MissingResponseCode) as e:
-        response = Response('SomemissingResponseCode')
