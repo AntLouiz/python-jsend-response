@@ -30,7 +30,7 @@ class SuccessResponse(BaseResponse):
         self.data = data
 
 
-class CreatedSuccessfullyResponse(SuccessResponse):
+class CreatedSuccessfully(SuccessResponse):
     http_code = 201
 
 
@@ -38,64 +38,57 @@ class FailureResponse(BaseResponse):
     status = 'failure'
     http_code = 400
 
+    def __init__(self, message=None):
+        self.message = message
+
 
 class ErrorResponse(BaseResponse):
     status = 'error'
     http_code = 500
 
+    def __init__(self, message=None):
+        self.message = message
+
 
 class BadResponse(FailureResponse):
-    message = 'Bad Request'
+    def __init__(self, message='Bad Request'):
+        self.message = message
 
 
-class UnauthorizedResponse(FailureResponse):
+class Unauthorized(FailureResponse):
     http_code = 401
-    message = "Unauthorized"
+
+    def __init__(self, message='Unauthorized'):
+        self.message = message
 
 
-class ForbiddenResponse(FailureResponse):
+class Forbidden(FailureResponse):
     http_code = 403
-    message = 'Forbidden'
+
+    def __init__(self, message="Forbidden"):
+        self.message = message
 
 
-class NotFoundResponse(FailureResponse):
+class NotFound(FailureResponse):
     http_code = 404
-    message = "Not found"
+
+    def __init__(self, message="Not found"):
+        self.message = message
 
 
-class AccountAlreadyExistsResponse(BadResponse):
-    message = 'User account already exists.'
+class ValidationError(BadResponse):
+
+    def __init__(self, message="The fields specified are invalid."):
+        self.message = message
 
 
-class AccountDoesntMatchResponse(BadResponse):
-    message = "Account doesn't match"
+class WrongData(BadResponse):
+
+    def __init__(self, message="The fields specified are invalid."):
+        self.message = message
 
 
-class AlreadyRevokedTokenResponse(BadResponse):
-    message = "Token is already revoked"
+class ServerError(ErrorResponse):
 
-
-class ValidationErrorResponse(BadResponse):
-    message = "The fields specified are invalid."
-
-
-class WrongDataResponse(BadResponse):
-    message = "The data specified is invalid."
-
-
-class EntityAlreadyExistsResponse(FailureResponse):
-    http_code = 409
-    message = "The specified entity already exists."
-
-
-class NotAllowedResponse(ForbiddenResponse):
-    message = "Not allowed to access this route."
-
-
-class NotImplementedErrorResponse(ErrorResponse):
-    http_code = 501
-    message = "The requested operation is not implemented on the specified resource."
-
-
-class UserAccountDoesntExistResponse(NotFoundResponse):
-    message = "User account doesn't exist"
+    def __init__(self, message="Server error."):
+        self.message = message
