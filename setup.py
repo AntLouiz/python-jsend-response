@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="python-jsend-response",
-    version="0.0.1",
+    version="0.0.2",
     author="AntLouiz",
     author_email="luizrodrigo46@hotmail.com",
     description="python-jsend-response is a simply python implementation of JSend.",
